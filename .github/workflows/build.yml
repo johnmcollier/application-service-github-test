@@ -31,9 +31,9 @@ jobs:
         username: ${{ secrets.QUAY_USERNAME }}
         password: ${{ secrets.QUAY_PASSWORD }}
         registry: quay.io
-        repository: redhat-appstudio/application-service
+        repository: jcollier/application-service
         dockerfile: Dockerfile
-        tags: next
+        tags: test
         tag_with_sha: true
 
   build-bundle-images:
