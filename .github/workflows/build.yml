@@ -41,6 +41,18 @@ jobs:
     steps:
     - name: Checkout application-service source code
       uses: actions/checkout@v2
+    - name: Install CLI tools from GitHub
+      uses: redhat-actions/openshift-tools-installer@v1
+      with:
+        # Search through these projects' GitHub releases, instead of the OpenShift Mirror.
+        # https://docs.github.com/en/actions/reference/authentication-in-a-workflow
+        source: "github"
+
+        # Using GitHub token from the github context
+        github_pat: ${{ github.token }}
+
+        kam: "latest"
+        operator-sdk: "1.13.1"
     - name: Get the 7-digit commit sha
       id: get_sha
       run: echo ::set-output name=git_sha::sha-$(git rev-parse --short=7 HEAD)
