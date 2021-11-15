@@ -4,7 +4,7 @@
 # - use the VERSION as arg of the bundle target (e.g make bundle VERSION=0.0.2)
 # - use environment variables to overwrite this value (e.g export VERSION=0.0.2)
 VERSION ?= 0.0.1
-TAG_NAME ?= next
+TAG_NAME ?= test
 
 # CHANNELS define the bundle channels used in the bundle.
 # Add a new line here if you would like to change its default config. (E.g CHANNELS = "candidate,fast,stable")
@@ -30,7 +30,7 @@ BUNDLE_METADATA_OPTS ?= $(BUNDLE_CHANNELS) $(BUNDLE_DEFAULT_CHANNEL)
 #
 # For example, running 'make bundle-build bundle-push catalog-build catalog-push' will build and push both
 # redhat.com/application-service-bundle:$VERSION and redhat.com/application-service-catalog:$VERSION.
-IMAGE_TAG_BASE ?= quay.io/redhat-appstudio/application-service
+IMAGE_TAG_BASE ?= quay.io/jcollier/application-service
 
 # BUNDLE_IMG defines the image:tag used for the bundle.
 # You can use it as an arg. (E.g make bundle-catalog-build BUNDLE_IMG=<some-registry>/<project-name-bundle>:<tag>)
