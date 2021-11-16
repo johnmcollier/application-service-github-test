@@ -33,7 +33,7 @@ jobs:
         registry: quay.io
         repository: jcollier/application-service
         dockerfile: Dockerfile
-        tags: next
+        tags: test
         tag_with_sha: true
 
   build-bundle-images:
